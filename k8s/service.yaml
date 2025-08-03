@@ -1,0 +1,13 @@
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: django-service
+spec:
+  selector:
+    app: django-webapp # Harus cocok dengan label di Deployment
+  ports:
+    - protocol: TCP
+      port: 8000 # Port internal service
+      targetPort: 8000 # Port pada container
+  type: NodePort # Mengekspos service di luar cluster Minikube
