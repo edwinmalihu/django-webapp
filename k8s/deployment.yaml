@@ -22,10 +22,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: { APPNAME }
+  name: "{APPNAME}"
 spec:
   selector:
-    app: { APPNAME } # Harus cocok dengan label di Deployment
+    app: "{APPNAME}" # Harus cocok dengan label di Deployment
   ports:
     - protocol: TCP
       port: 8000 # Port internal service
