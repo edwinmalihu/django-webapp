@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: { APPNAME }
+  name: "{APPNAME}"
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: { APPNAME }
+      app: "{APPNAME}"
   template:
     metadata:
       labels:
-        app: { APPNAME }
+        app: "{APPNAME}"
     spec:
       containers:
-        - name: { APPNAME }
-          image: { IMAGE }
+        - name: "{APPNAME}"
+          image: "{REPO}/{APPNAME}:{TAG}" # Ganti dengan nama image yang sesuai
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
