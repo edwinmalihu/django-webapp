@@ -31,3 +31,20 @@ spec:
       port: 8000 # Port internal service
       targetPort: 8000 # Port pada container
   type: NodePort # Mengekspos service di luar cluster Minikube
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "{APPNAME}"
+spec:
+  rules:
+    - host: django.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: "{APPNAME}"
+                port:
+                  number: 8000
